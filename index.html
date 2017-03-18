@@ -1,139 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>Building</title>
-	<style>
-		.container{
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			width: 744px;
-			height: 142px;
-			margin: auto;
-		}
-		#title{
-			padding: 20px;
-			color: #000;
-			font-size: 2em;
-			text-align: center;
-		}
+  <meta charset="utf-8">
+  <title>AymaxLi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/bujiangjiu.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
 
-		#noTrespassingOuterBarG{
-			height:55px;
-			width:440px;
-			border:3px solid rgb(0,0,0);
-			overflow:hidden;
-			background-color:rgb(255,255,255);
-			margin:auto;
-		}
-
-		.noTrespassingBarLineG{
-			background-color:rgb(0,0,0);
-			float:left;
-			width:39px;
-			height:330px;
-			margin-right:66px;
-			margin-top:-77px;
-			transform:rotate(45deg);
-				-o-transform:rotate(45deg);
-				-ms-transform:rotate(45deg);
-				-webkit-transform:rotate(45deg);
-				-moz-transform:rotate(45deg);
-		}
-
-		.noTrespassingAnimationG{
-			width:649px;
-			animation-name:noTrespassingAnimationG;
-				-o-animation-name:noTrespassingAnimationG;
-				-ms-animation-name:noTrespassingAnimationG;
-				-webkit-animation-name:noTrespassingAnimationG;
-				-moz-animation-name:noTrespassingAnimationG;
-			animation-duration:1.235s;
-				-o-animation-duration:1.235s;
-				-ms-animation-duration:1.235s;
-				-webkit-animation-duration:1.235s;
-				-moz-animation-duration:1.235s;
-			animation-iteration-count:infinite;
-				-o-animation-iteration-count:infinite;
-				-ms-animation-iteration-count:infinite;
-				-webkit-animation-iteration-count:infinite;
-				-moz-animation-iteration-count:infinite;
-			animation-timing-function:linear;
-				-o-animation-timing-function:linear;
-				-ms-animation-timing-function:linear;
-				-webkit-animation-timing-function:linear;
-				-moz-animation-timing-function:linear;
-		}
-
-
-
-		@keyframes noTrespassingAnimationG{
-			0%{
-				margin-left:0px;
-			}
-
-			100%{
-				margin-left:-105px;
-			}
-		}
-
-		@-o-keyframes noTrespassingAnimationG{
-			0%{
-				margin-left:0px;
-			}
-
-			100%{
-				margin-left:-105px;
-			}
-		}
-
-		@-ms-keyframes noTrespassingAnimationG{
-			0%{
-				margin-left:0px;
-			}
-
-			100%{
-				margin-left:-105px;
-			}
-		}
-
-		@-webkit-keyframes noTrespassingAnimationG{
-			0%{
-				margin-left:0px;
-			}
-
-			100%{
-				margin-left:-105px;
-			}
-		}
-
-		@-moz-keyframes noTrespassingAnimationG{
-			0%{
-				margin-left:0px;
-			}
-
-			100%{
-				margin-left:-105px;
-			}
-		}
-	</style>
 </head>
+
 <body>
-	<div class="container">
-		<div id="noTrespassingOuterBarG">
-			<div id="noTrespassingFrontBarG" class="noTrespassingAnimationG">
-				<div class="noTrespassingBarLineG"></div>
-				<div class="noTrespassingBarLineG"></div>
-				<div class="noTrespassingBarLineG"></div>
-				<div class="noTrespassingBarLineG"></div>
-				<div class="noTrespassingBarLineG"></div>
-				<div class="noTrespassingBarLineG"></div>
-			</div>
-		</div>
-		<div id="title">网站正在施工中...</div id="title">
-	</div>
+  <nav class="app-nav">
+
+
+      <a class="active" href="/.">home</a>
+
+
+</nav>
+
+  <header class="app-header">
+  <section class="banner">
+    <!-- http://daverupert.com/2015/12/intrinsic-placeholders-with-picture/ -->
+    <div class="placeholder"></div>
+    <img
+      class="banner-small"
+      data-src="/images/banner-large.webp"
+      src="/images/banner-small.webp"
+      alt="banner"
+    >
+  </section>
+
+  <section class="description">
+    <img class="avatar" src="/images/bujiangjiu.webp" alt="avatar" />
+    <h1 class="title"> AymaxLi </h1>
+    <h3 class="subtitle"> 请你别嫌我将这线程奉献给你 </h3>
+  </section>
+
+  <ul class="social-list">
+
+    <a href="https://github.com/AymaxLi">GitHub</a>
+
+  </ul>
+</header>
+
+<main class="index">
+
+    <article>
+      <h1 class="article-title">
+        <a href="/2017/03/18/2017-3-18/"></a>
+      </h1>
+
+      <div class="article-entry">
+
+      </div>
+
+      <div class="article-meta">
+        <span class="article-date">Mar 18 2017</span>
+        <a href="/2017/03/18/2017-3-18/">记</a>
+      </div>
+    </article>
+
+
+  <nav class="page-nav">
+  <span class="page-number current">1</span>
+</nav>
+
+</main>
+
+<footer class="app-footer">
+  <p>
+    Theme written by
+    <a href="https://github.com/DrakeLeung/hexo-theme-again">
+      Drake Leung
+    </a>
+  </p>
+  <p> Powered by <a href="https://hexo.io"> Hexo </a> <p>
+</footer>
+
+<script src="/js/app.js"></script>
+
 </body>
 </html>
