@@ -37,18 +37,18 @@
 <li><p>新的流程：<br>用户来到备注页后，直接弹出下载提示，点击安装后继续阅读备注页</p>
 </li>
 </ul>
-<h2 id="Trapped"><a href="#Trapped" class="headerlink" title="Trapped"></a>Trapped</h2><p>因为这个 itms-service://xxxxxxx 空白下载页我是无法控制的，我不可能从这里跳到备注页。所以我一开始的想法是在备注页想办法抛弃 window.open(downloadUrl) 这种新建标签页的方法，instead，我想直接调用这个 itms-service。</p>
+<h2 id="Trapped"><a href="#Trapped" class="headerlink" title="Trapped"></a>Trapped</h2><p>因为这个 itms-service://xxxxxxx 空白下载页我是无法控制的，我不可能从这里跳到备注页。所以我不能用 window.open(downloadUrl)，因为这会跳转到新页面。<strong>instead，我要在备注页直接调用这个 itms-service。</strong></p>
 <h3 id="location-href"><a href="#location-href" class="headerlink" title="location.href"></a>location.href</h3><p>首先我尝试的第一个方法是直接改 location.href，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href = <span class="string">'itms-service://xxxxxxx'</span>;</div></pre></td></tr></table></figure></p>
-<p>这个方法在 iOS10 的 Safari 上是可行的，它会调用 items-service 来下载，但是页面的 href 其实不会改变，会继续停留在备注页。</p>
-<p>天真的我以为这样就能收工了，然而事情并没有这么顺利。iOS8 和 iOS9 的 Safari 对直接改 location.href 的浏览器浏览器行为并没有这么友好。</p>
+<p>这个方法在 iOS10 的 Safari 上是可行的，它会调用 items-service 来下载，但是 <strong>页面的 href 其实不会改变</strong>，会继续停留在备注页。</p>
+<p>天真的我以为这样就能收工了，然而事情并没有这么顺利。iOS8 和 iOS9 的 Safari 对直接改 location.href 的浏览器行为并没有这么友好。</p>
 <ul>
-<li><p>在 iOS8 中，直接改 location.href 并不会马上有效果，要手动刷新才会有下载提示。</p>
+<li><p>在 iOS8 中，直接改 location.href 并不会马上有效果，<strong>要手动刷新</strong> 才会有下载提示。</p>
 </li>
-<li><p>在 iOS9 中，直接改 location.href 更加神奇，它虽然不用手动刷新也有下载提示，但是点击下载后当前备注页会被关掉，令人汗颜。。。</p>
+<li><p>在 iOS9 中，直接改 location.href 更加神奇，它虽然不用手动刷新也有下载提示，但是 <strong>点击下载后当前备注页会被关掉</strong>，令人汗颜。。。😓</p>
 </li>
 </ul>
 <h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><p>后来，我尝试了第二个方法 - iframe<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</div><div class="line">ifr.src = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">ifr.style.display = <span class="string">'none'</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(ifr);</div></pre></td></tr></table></figure></p>
-<p>很不巧，不同版本的 Safari 对 iframe 的处理也是不一样的，这种方法在 iOS9 的 Safari 中甚至会失效</p>
+<p>很不巧，不同版本的 Safari 对 iframe 的处理也是不一样的，<strong>这种方法在 iOS9 的 Safari 中甚至会失效</strong></p>
 <h2 id="Solved"><a href="#Solved" class="headerlink" title="Solved"></a>Solved</h2><p>最后，我找到能了兼容 iOS8/9/10 的方法 🙈🙉🙊<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">link.href = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">link.style = <span class="string">"visibility: hidden"</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(link);</div><div class="line">link.click();</div></pre></td></tr></table></figure></p>
 <p>对于这种用 <code>a</code> 标签打开 itms-service://xxxxxxx 的方式，三个版本的 Safari 的浏览器行为终于一样了，都是能弹出下载提示，真是皆大欢喜啊，心中默默问候了 Safari 千百遍，终于能回宿舍洗澡睡觉了😭😭</p>
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
