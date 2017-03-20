@@ -30,45 +30,29 @@
   </section>
 
   <section class="article-entry">
-    <h2>Fuse</h2>
-<p>近来接到一个优化需求是要改 ios 端下载页面的流程，当初我以为这是小菜一碟，晚饭后便去南亭买了杯奶盖🍨，差屁颠屁颠的回了工作室🚲，后来发现才发现我真是 too navie 😷😷</p>
-<h2>Details</h2>
-<ul>
-<li>
-<p>以前的业务流程：
-用户阅读完备注页后，点击按钮，通过 window.open('itms-service://xxxxxxx') 打开新窗口，调用 itms-service 协议的空白页下载软件</p>
+    <h2 id="Fuse"><a href="#Fuse" class="headerlink" title="Fuse"></a>Fuse</h2><p>近来接到一个优化需求是要改 iOS 端下载页面的流程，当初我以为这是小菜一碟，晚饭后便去南亭买了杯奶盖🍨，差屁颠屁颠的回了工作室🚲，后来发现才发现我真是 too navie 😷😷</p>
+<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
+<li><p>以前的业务流程：<br>用户阅读完备注页后，点击按钮，通过 window.open(‘itms-service://xxxxxxx’) 打开新窗口，调用 itms-service 协议的空白页下载软件</p>
 </li>
-<li>
-<p>新的流程：
-用户来到备注页后，直接弹出下载提示，点击安装后继续阅读备注页</p>
+<li><p>新的流程：<br>用户来到备注页后，直接弹出下载提示，点击安装后继续阅读备注页</p>
 </li>
 </ul>
-<h2>Trapped</h2>
-<p>因为这个 itms-service://xxxxxxx 空白下载页我是无法控制的，我不可能从这里跳到备注页。所以我一开始的想法是在备注页想办法抛弃 window.open(downloadUrl) 这种新建标签页的方法，instead，我想直接调用这个 itms-service。</p>
-<h3>location.href</h3>
-<p>首先我尝试的第一个方法是直接改 location.href，
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href = <span class="string">'itms-service://xxxxxxx'</span>;</div></pre></td></tr></table></figure></p>
+<h2 id="Trapped"><a href="#Trapped" class="headerlink" title="Trapped"></a>Trapped</h2><p>因为这个 itms-service://xxxxxxx 空白下载页我是无法控制的，我不可能从这里跳到备注页。所以我一开始的想法是在备注页想办法抛弃 window.open(downloadUrl) 这种新建标签页的方法，instead，我想直接调用这个 itms-service。</p>
+<h3 id="location-href"><a href="#location-href" class="headerlink" title="location.href"></a>location.href</h3><p>首先我尝试的第一个方法是直接改 location.href，<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href = <span class="string">'itms-service://xxxxxxx'</span>;</div></pre></td></tr></table></figure></p>
 <p>这个方法在 iOS10 的 Safari 上是可行的，它会调用 items-service 来下载，但是页面的 href 其实不会改变，会继续停留在备注页。</p>
 <p>天真的我以为这样就能收工了，然而事情并没有这么顺利。iOS8 和 iOS9 的 Safari 对直接改 location.href 的浏览器浏览器行为并没有这么友好。</p>
 <ul>
-<li>
-<p>在 iOS8 中，直接改 location.href 并不会马上有效果，要手动刷新才会有下载提示。</p>
+<li><p>在 iOS8 中，直接改 location.href 并不会马上有效果，要手动刷新才会有下载提示。</p>
 </li>
-<li>
-<p>在 iOS9 中，直接改 location.href 更加神奇，它虽然不用手动刷新也有下载提示，但是点击下载后当前备注页会被关掉，令人汗颜。。。</p>
+<li><p>在 iOS9 中，直接改 location.href 更加神奇，它虽然不用手动刷新也有下载提示，但是点击下载后当前备注页会被关掉，令人汗颜。。。</p>
 </li>
 </ul>
-<h3>iframe</h3>
-<p>后来，我尝试了第二个方法 - iframe
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</div><div class="line">ifr.src = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">ifr.style.display = <span class="string">'none'</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(ifr);</div></pre></td></tr></table></figure></p>
+<h3 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h3><p>后来，我尝试了第二个方法 - iframe<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</div><div class="line">ifr.src = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">ifr.style.display = <span class="string">'none'</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(ifr);</div></pre></td></tr></table></figure></p>
 <p>很不巧，不同版本的 Safari 对 iframe 的处理也是不一样的</p>
-<h2>Solved</h2>
-<p>最后，我找到能了兼容 iOS8/9/10 的方法 🙈🙉🙊
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">link.href = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">link.style = <span class="string">"visibility: hidden"</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(link);</div><div class="line">link.click();</div></pre></td></tr></table></figure></p>
+<h2 id="Solved"><a href="#Solved" class="headerlink" title="Solved"></a>Solved</h2><p>最后，我找到能了兼容 iOS8/9/10 的方法 🙈🙉🙊<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">link.href = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">link.style = <span class="string">"visibility: hidden"</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(link);</div><div class="line">link.click();</div></pre></td></tr></table></figure></p>
 <p>对于这种用 <code>a</code> 标签打开 itms-service://xxxxxxx 的方式，三个版本的 Safari 的浏览器行为终于一样了，都是能弹出下载提示，真是皆大欢喜啊，心中默默问候了 Safari 千百遍，终于能回宿舍洗澡睡觉了😭😭</p>
-<h2>References</h2>
-<ul>
-<li><a href="http://www.cnblogs.com/zichi/p/5011212.html" target="_blank" rel="external">Safari 下用 &quot;location.href = filePath&quot; 实现下载功能的诡异 bug</a></li>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
+<li><a href="http://www.cnblogs.com/zichi/p/5011212.html" target="_blank" rel="external">Safari 下用 “location.href = filePath” 实现下载功能的诡异 bug</a></li>
 <li><a href="http://www.webdeveloper.com/forum/showthread.php?112208-how-to-overcome-hidden-iframe-problem-in-Safari" target="_blank" rel="external">how to overcome hidden iframe problem in Safari</a></li>
 <li><a href="http://stackoverflow.com/questions/23190467/how-can-i-make-my-file-download-work-on-ie-and-safari" target="_blank" rel="external">How can I make my file download work on IE and safari?</a></li>
 <li><a href="https://www.keakon.net/2015/09/29/%E5%85%BC%E5%AE%B9iOS9Safari%E7%9A%84%E5%BA%94%E7%94%A8%E8%B7%B3%E8%BD%AC%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2" target="_blank" rel="external">兼容 iOS 9 Safari 的应用跳转方案探索</a></li>
@@ -92,8 +76,7 @@
   class="twitter-share-button"
   data-size="large"
   data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text=>Fuse</h2>
-<p>近来接到一个"
+  href="https://twitter.com/intent/tweet?text= id="Fuse"><a href=""
 >
   Tweet
 </a>
