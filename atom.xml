@@ -1,44 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Safari 的下载坑 | AymaxLi</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="shortcut icon" href="/bujiangjiu.ico">
-  <link rel="stylesheet" href="/css/app.css">
-  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Aymax&#39;s Home</title>
   
-</head>
-
-<body>
-  <nav class="app-nav">
+  <link href="/atom.xml" rel="self"/>
   
-    
-      <a href="/.">home</a>
-    
+  <link href="http://yoursite.com/"/>
+  <updated>2017-03-21T14:14:38.669Z</updated>
+  <id>http://yoursite.com/</id>
   
+  <author>
+    <name>AymaxLi</name>
     
-      <a href="/archives">archive</a>
-    
+  </author>
   
-    
-      <a href="/atom.xml">rss</a>
-    
+  <generator uri="http://hexo.io/">Hexo</generator>
   
-</nav>
-
-  <main class="post">
-  <article>
-  <h1 class="article-title">
-    <a href="/2017/03/20/iframe-problem-in-safari/">Safari 的下载坑</a>
-  </h1>
-
-  <section class="article-meta">
-    <p class="article-date">March 20 2017</p>
-  </section>
-
-  <section class="article-entry">
-    <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>近来接到一个优化需求是要改 iOS 端下载页面的流程，当初我以为这是小菜一碟，晚饭后便去南亭买了杯奶盖🍨，差屁颠屁颠的回了工作室🚲，后来发现才发现我真是 too navie 😷😷</p>
+  <entry>
+    <title>Safari 的下载坑</title>
+    <link href="http://yoursite.com/2017/03/20/iframe-problem-in-safari/"/>
+    <id>http://yoursite.com/2017/03/20/iframe-problem-in-safari/</id>
+    <published>2017-03-19T16:00:00.000Z</published>
+    <updated>2017-03-21T14:14:38.669Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>近来接到一个优化需求是要改 iOS 端下载页面的流程，当初我以为这是小菜一碟，晚饭后便去南亭买了杯奶盖🍨，差屁颠屁颠的回了工作室🚲，后来发现才发现我真是 too navie 😷😷</p>
 <h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ul>
 <li><p>以前的业务流程：<br>用户阅读完备注页后，点击按钮，通过 window.open(‘itms-service://xxxxxxx’) 打开新窗口，调用 itms-service 协议的空白页下载软件</p>
 </li>
@@ -65,79 +49,15 @@
 <li><a href="http://stackoverflow.com/questions/23190467/how-can-i-make-my-file-download-work-on-ie-and-safari" target="_blank" rel="external">How can I make my file download work on IE and safari?</a></li>
 <li><a href="https://www.keakon.net/2015/09/29/%E5%85%BC%E5%AE%B9iOS9Safari%E7%9A%84%E5%BA%94%E7%94%A8%E8%B7%B3%E8%BD%AC%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2" target="_blank" rel="external">兼容 iOS 9 Safari 的应用跳转方案探索</a></li>
 </ul>
-
-  </section>
-</article>
-
-  <div class="sharing grid">
-  <section class="profile grid-item grid">
-    <img class="avatar" src="/images/bujiangjiu.jpg" alt="avatar" />
-    <div class="grid-item">
-      <p class="title"> AymaxLi </p>
-      <p class="subtitle"> 请你别嫌我将这线程奉献给你 </p>
-    <div>
-  </section>
-
-  <!-- <section class="share-btns"> -->
-    <!-- <p> share it if you like it~ </p> -->
-    <!-- <a
-  class="twitter-share-button"
-  data-size="large"
-  data-via="DrakeLeung"
-  href="https://twitter.com/intent/tweet?text= id="Background"><a "
->
-  Tweet
-</a>
-
-<script>
-  window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  js.async = true;
-  fjs.parentNode.insertBefore(js, fjs);
-
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
-
-  return t;
-}(document, "script", "twitter-wjs"));
-</script>
- -->
-  <!-- </section> -->
-</div>
-
-
-  
+]]></content>
     
-<section class="article-comment">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
-
-<script>
-  var disqus_shortname = 'aymax';
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;近来接到一个优化需求是要改 iOS 端下载页面的流程，当初我以为这是小菜一碟
+    
+    </summary>
+    
+    
+  </entry>
   
-  var disqus_url = 'http://yoursite.com/2017/03/20/iframe-problem-in-safari/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
-
-  
-</main>
-
-</body>
-</html>
+</feed>
