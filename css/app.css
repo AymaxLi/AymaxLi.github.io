@@ -46,6 +46,9 @@ img.emoji {
     color: #5badf0;
     text-transform: capitalize;
     padding: 6px 10px; }
+  .app-nav .active {
+    background-color: #5badf0;
+    color: #fff; }
 
 .app-header {
   text-align: center; }

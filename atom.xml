@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="http://aymaxli.cn/"/>
   <updated>2017-03-21T14:14:38.669Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://aymaxli.cn/</id>
   
   <author>
     <name>AymaxLi</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Safari 的下载坑</title>
-    <link href="http://yoursite.com/2017/03/20/iframe-problem-in-safari/"/>
-    <id>http://yoursite.com/2017/03/20/iframe-problem-in-safari/</id>
+    <link href="http://aymaxli.cn/2017/03/20/iframe-problem-in-safari/"/>
+    <id>http://aymaxli.cn/2017/03/20/iframe-problem-in-safari/</id>
     <published>2017-03-19T16:00:00.000Z</published>
     <updated>2017-03-21T14:14:38.669Z</updated>
     
