@@ -1,28 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Aymax&#39;s Home</title>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>图片按比例响应的魔法 | AymaxLi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="shortcut icon" href="/bujiangjiu.ico">
+  <link rel="stylesheet" href="/css/app.css">
+  <!-- <link rel='stylesheet' href='http://fonts.useso.com/css?family=Source+Code+Pro'> -->
   
-  <link href="/atom.xml" rel="self"/>
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-94105642-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
   
-  <link href="http://aymaxli.cn/"/>
-  <updated>2017-04-07T14:14:14.824Z</updated>
-  <id>http://aymaxli.cn/</id>
+</head>
+
+<body>
+  <nav class="app-nav">
   
-  <author>
-    <name>AymaxLi</name>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>图片按比例响应的魔法</title>
-    <link href="http://aymaxli.cn/2017/04/06/keep-aspect-ratio-of-images/"/>
-    <id>http://aymaxli.cn/2017/04/06/keep-aspect-ratio-of-images/</id>
-    <published>2017-04-05T16:00:00.000Z</published>
-    <updated>2017-04-07T14:14:14.824Z</updated>
+      <a href="/.">home</a>
     
-    <content type="html"><![CDATA[<h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>小伙伴们在写 banner 的时候，肯定都会遇到响应问题🐍，so 我们来看看图片按比例响应的各种魔法吧~</p>
+  
+    
+      <a href="/archives">archive</a>
+    
+  
+    
+      <a href="/atom.xml">rss</a>
+    
+  
+</nav>
+
+  <main class="post">
+  <article>
+  <h1 class="article-title">
+    <a href="/2017/04/06/keep-aspect-ratio-of-images/">图片按比例响应的魔法</a>
+  </h1>
+
+  <section class="article-meta">
+    <p class="article-date">April 06 2017</p>
+  </section>
+
+  <section class="article-entry">
+    <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><p>小伙伴们在写 banner 的时候，肯定都会遇到响应问题🐍，so 我们来看看图片按比例响应的各种魔法吧~</p>
 <p><img src="/2017-4-6/images/没见过世面.jpg" alt="没见过世面.jpg"></p>
 <h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><h3 id="初阶魔法-vw"><a href="#初阶魔法-vw" class="headerlink" title="初阶魔法 - vw"></a>初阶魔法 - vw</h3><p><code>vw</code> 是 <code>CSS3</code>新增的一个长度单位，与其配对的还有 <code>vh</code>。</p>
 <blockquote>
@@ -89,79 +117,79 @@
 <li><a href="http://www.jianshu.com/p/83a84445d967" target="_blank" rel="external">css实现高度height随宽度width变化保持比例不变 - 简书</a></li>
 <li><a href="http://www.zhangxinxu.com/wordpress/2015/08/css-deep-understand-vertical-align-and-line-height/" target="_blank" rel="external">CSS深入理解vertical-align和line-height的基友关系 - 张鑫旭</a></li>
 </ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Background&quot;&gt;&lt;a href=&quot;#Background&quot; class=&quot;headerlink&quot; title=&quot;Background&quot;&gt;&lt;/a&gt;Background&lt;/h2&gt;&lt;p&gt;小伙伴们在写 banner 的时候，肯定都会遇到响应问题🐍，so 我们来看
-    
-    </summary>
-    
-    
-  </entry>
+
+  </section>
+</article>
+
+  <div class="sharing grid">
+  <section class="profile grid-item grid">
+    <img class="avatar" src="/images/bujiangjiu.jpg" alt="avatar" />
+    <div class="grid-item">
+      <p class="title"> AymaxLi </p>
+      <p class="subtitle"> 请你别嫌我将这线程奉献给你 </p>
+    <div>
+  </section>
+
+  <!-- <section class="share-btns">
+    <p> share it if you like it~ </p>
+    <a
+  class="twitter-share-button"
+  data-size="large"
+  data-via="AymaxLi"
+  href="https://twitter.com/intent/tweet?text= id="Background"><a "
+>
+  Tweet
+</a>
+
+<script>
+  window.twttr = (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0],
+    t = window.twttr || {};
+  if (d.getElementById(id)) return t;
+  js = d.createElement(s);
+  js.id = id;
+  js.src = "https://platform.twitter.com/widgets.js";
+  js.async = true;
+  fjs.parentNode.insertBefore(js, fjs);
+
+  t._e = [];
+  t.ready = function(f) {
+    t._e.push(f);
+  };
+
+  return t;
+}(document, "script", "twitter-wjs"));
+</script>
+
+  </section> -->
+</div>
+
+
   
-  <entry>
-    <title>Safari 的下载坑</title>
-    <link href="http://aymaxli.cn/2017/03/20/Safari-download-problem/"/>
-    <id>http://aymaxli.cn/2017/03/20/Safari-download-problem/</id>
-    <published>2017-03-19T16:00:00.000Z</published>
-    <updated>2017-03-21T14:14:38.669Z</updated>
     
-    <content type="html"><![CDATA[<h2>Background</h2>
-<p>近来接到一个优化需求是要改 iOS 端下载页面的流程，当初我以为这是小菜一碟，晚饭后便去南亭买了杯奶盖🍨，差屁颠屁颠的回了工作室🚲，后来发现才发现我真是 too navie 😷😷</p>
-<h2>Details</h2>
-<ul>
-<li>
-<p>以前的业务流程：
-用户阅读完备注页后，点击按钮，通过 window.open('itms-service://xxxxxxx') 打开新窗口，调用 itms-service 协议的空白页下载软件</p>
-</li>
-<li>
-<p>新的流程：
-用户来到备注页后，直接弹出下载提示，点击安装后继续阅读备注页</p>
-</li>
-</ul>
-<h2>Trapped</h2>
-<p>因为这个 itms-service://xxxxxxx 空白下载页我是无法控制的，我不可能从这里跳到备注页。所以我不能用 window.open(downloadUrl)，因为这会跳转到新页面。<strong>instead，我要在备注页直接调用这个 itms-service。</strong></p>
-<h3>location.href</h3>
-<p>首先我尝试的第一个方法是直接改 location.href，
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">location.href = <span class="string">'itms-service://xxxxxxx'</span>;</div></pre></td></tr></table></figure></p>
-<p>这个方法在 iOS10 的 Safari 上是可行的，它会调用 items-service 来下载，但是 <strong>页面的 href 其实不会改变</strong>，会继续停留在备注页。</p>
-<p>天真的我以为这样就能收工了，然而事情并没有这么顺利。iOS8 和 iOS9 的 Safari 对直接改 location.href 的浏览器行为并没有这么友好。</p>
-<ul>
-<li>
-<p>在 iOS8 中，直接改 location.href 并不会马上有效果，<strong>要手动刷新</strong> 才会有下载提示。</p>
-</li>
-<li>
-<p>在 iOS9 中，直接改 location.href 更加神奇，它虽然不用手动刷新也有下载提示，但是 <strong>点击下载后当前备注页会被关掉</strong>，令人汗颜。。。😓</p>
-</li>
-</ul>
-<h3>iframe</h3>
-<p>后来，我尝试了第二个方法 - iframe
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</div><div class="line">ifr.src = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">ifr.style.display = <span class="string">'none'</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(ifr);</div></pre></td></tr></table></figure></p>
-<p>很不巧，不同版本的 Safari 对 iframe 的处理也是不一样的，<strong>这种方法在 iOS9 的 Safari 中甚至会失效</strong></p>
-<h2>Solved</h2>
-<p>最后，我找到能了兼容 iOS8/9/10 的方法 🙈🙉🙊
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> link = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</div><div class="line">link.href = <span class="string">'itms-service://xxxxxxx'</span>;</div><div class="line">link.style = <span class="string">"visibility: hidden"</span>;</div><div class="line"><span class="built_in">document</span>.body.appendChild(link);</div><div class="line">link.click();</div></pre></td></tr></table></figure></p>
-<p>对于这种用 <code>a</code> 标签打开 itms-service://xxxxxxx 的方式，三个版本的 Safari 的浏览器行为终于一样了，都是能弹出下载提示，真是皆大欢喜啊，心中默默问候了 Safari 千百遍，终于能回宿舍洗澡睡觉了😭😭</p>
-<h2>References</h2>
-<ul>
-<li><a href="http://www.cnblogs.com/zichi/p/5011212.html" target="_blank" rel="external">Safari 下用 &quot;location.href = filePath&quot; 实现下载功能的诡异 bug</a></li>
-<li><a href="http://www.webdeveloper.com/forum/showthread.php?112208-how-to-overcome-hidden-iframe-problem-in-Safari" target="_blank" rel="external">how to overcome hidden iframe problem in Safari</a></li>
-<li><a href="http://stackoverflow.com/questions/23190467/how-can-i-make-my-file-download-work-on-ie-and-safari" target="_blank" rel="external">How can I make my file download work on IE and safari?</a></li>
-<li><a href="https://www.keakon.net/2015/09/29/%E5%85%BC%E5%AE%B9iOS9Safari%E7%9A%84%E5%BA%94%E7%94%A8%E8%B7%B3%E8%BD%AC%E6%96%B9%E6%A1%88%E6%8E%A2%E7%B4%A2" target="_blank" rel="external">兼容 iOS 9 Safari 的应用跳转方案探索</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2&gt;Background&lt;/h2&gt;
-&lt;p&gt;近来接到一个优化需求是要改 iOS 端下载页面的流程，当初我以为这是小菜一碟，晚饭后便去南亭买了杯奶盖🍨，差屁颠屁颠的回了工作室🚲，后来发现才发现我真是 too navie 😷😷&lt;/p&gt;
-&lt;h2&gt;Details&lt;/h2&gt;
-&lt;u
-    
-    </summary>
-    
-    
-  </entry>
+<section class="article-comment">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+<script>
+  var disqus_shortname = 'aymaxli';
   
-</feed>
+  var disqus_url = 'http://aymaxli.cn/2017/04/06/keep-aspect-ratio-of-images/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    // dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src='/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+  
+</main>
+
+</body>
+</html>

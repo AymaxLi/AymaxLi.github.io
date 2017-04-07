@@ -39,35 +39,42 @@
   
 </nav>
 
-  <main class="archive">
-  
-    <article class="grid">
-  <h1 class="article-title grid-item">
-    <a href="/2017/04/06/keep-aspect-ratio-of-images/">图片按比例响应的魔法</a>
-  </h1>
+  <main class="page">
+  <div>
+    <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+    * {
+      padding: 0;
+      margin: 0;
+    }
 
-  <div class="article-meta">
-    <span class="article-date">Apr 06 2017</span>
+    .daddy {
+      background-color: #ff0000;
+      width: 20%;
+    }
+
+    .daddy::before {
+      content: "";
+      display: inline-block; /* 伪元素默认为行内元素，改成块级元素才能撑开 daddy */
+      background-color: pink;
+      padding-bottom: 50%;
+      width: .1px;
+      vertical-align: middle; /* 很重要，解决 line-height 产生的白带 */
+    }
+    </style>
+  </head>
+  <body>
+    <div class="daddy">
+      <span>hei i am Aymax</span>
+    </div>
+  </body>
+</html>
+
   </div>
-</article>
-
-  
-    <article class="grid">
-  <h1 class="article-title grid-item">
-    <a href="/2017/03/20/Safari-download-problem/">Safari 的下载坑</a>
-  </h1>
-
-  <div class="article-meta">
-    <span class="article-date">Mar 20 2017</span>
-  </div>
-</article>
-
-  
-
-  <nav class="page-nav">
-  <span class="page-number current">1</span>
-</nav>
-
 </main>
 
 </body>
